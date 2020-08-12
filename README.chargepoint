@@ -1,0 +1,9 @@
+Psplash has more of a source level customizations with binaries and
+so it is not "easily" patched thru the normal means of buildroot. So,
+this is a customization branch for chargepoint to allow the changes
+desired to be tracked via a fork from the original git project.
+
+roboto-font.h was generated using the make-font-header.sh script using the
+Roboto-Bold.ttf as an input.
+
+associated changes for building the chargepoint logo.

@@ -13,7 +13,7 @@
 #include "psplash.h"
 #include "psplash-config.h"
 #include "psplash-colors.h"
-#include "psplash-poky-img.h"
+#include "psplash-logo-img.h"
 #include "psplash-bar-img.h"
 #ifdef HAVE_SYSTEMD
 #include <systemd/sd-daemon.h>
@@ -296,20 +296,20 @@ main (int argc, char** argv)
   psplash_fb_draw_rect (fb, 0, 0, fb->width, fb->height,
                         PSPLASH_BACKGROUND_COLOR);
 
-  /* Draw the Poky logo  */
+  /* Draw the compiled in logo  */
   psplash_fb_draw_image (fb, 
-			 (fb->width  - POKY_IMG_WIDTH)/2, 
+			 (fb->width  - LOGO_IMG_WIDTH)/2,
 #if PSPLASH_IMG_FULLSCREEN
-			 (fb->height - POKY_IMG_HEIGHT)/2,
+			 (fb->height - LOGO_IMG_HEIGHT)/2,
 #else
 			 (fb->height * PSPLASH_IMG_SPLIT_NUMERATOR
-			  / PSPLASH_IMG_SPLIT_DENOMINATOR - POKY_IMG_HEIGHT)/2,
+			  / PSPLASH_IMG_SPLIT_DENOMINATOR - LOGO_IMG_HEIGHT)/2,
 #endif
-			 POKY_IMG_WIDTH,
-			 POKY_IMG_HEIGHT,
-			 POKY_IMG_BYTES_PER_PIXEL,
-			 POKY_IMG_ROWSTRIDE,
-			 POKY_IMG_RLE_PIXEL_DATA);
+			 LOGO_IMG_WIDTH,
+			 LOGO_IMG_HEIGHT,
+			 LOGO_IMG_BYTES_PER_PIXEL,
+			 LOGO_IMG_ROWSTRIDE,
+			 LOGO_IMG_RLE_PIXEL_DATA);
 
   /* Draw progress bar border */
   psplash_fb_draw_image (fb, 
