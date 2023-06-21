@@ -553,7 +553,7 @@ psplash_fb_text_size (int                *width,
   mbtowc (0, 0, 0);
   for (; (k = mbtowc (&wc, c, n)) > 0; c += k, n -= k)
     {
-      if (*c == '\n')
+      if (*c == '\v')
 	{
 	  if (w > mw)
 	    mw = w;
@@ -592,7 +592,7 @@ psplash_fb_draw_text (PSplashFB         *fb,
     {
       u_int32_t *glyph = NULL;
 
-      if (*c == '\n')
+      if (*c == '\v')
 	{
 	  dy += h;
 	  dx  = 0;
